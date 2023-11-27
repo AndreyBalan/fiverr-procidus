@@ -5,7 +5,7 @@
     display: inline-flex;
     padding: toRem(10) toRem(16);
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 150%; /* 21px */
     background: $colorGreen;
@@ -17,5 +17,12 @@
     }
     &--fw {
         width: 100%;
+    }
+    &--header {
+        font-size: toRem(14);
+    }
+    &--support {
+        margin-top: toRem(8);
+        padding: toRem(12) toRem(24);
     }
 }
