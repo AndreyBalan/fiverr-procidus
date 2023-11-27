@@ -355,3 +355,82 @@
 }
 
 //====================================================================================================
+// Join
+
+.join {
+    padding: toRem(127) toRem(0);
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: -10;
+        background-color: $colorGreen;
+    }
+    // .join__container
+    &__container {
+        max-height: toRem(519);
+    }
+    &__content {
+        max-width: toRem(558);
+        // color: #fff;
+    }
+
+    // .join__title
+    &__title {
+        color: #fff;
+        font-weight: 800;
+        line-height: 140%; /* 44.8px */
+        text-transform: uppercase;
+    }
+    // .join__descr
+    &__descr {
+        color: #fdfdfd;
+        font-size: 18px;
+        line-height: 160%; /* 28.8px */
+        margin-bottom: toRem(24);
+    }
+    // .join__left
+    &__left {
+        position: absolute;
+        left: toRem(238);
+        top: 0;
+        background-image: url("img/join-bg-left.png");
+        background-size: cover;
+        background-position: left;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 60%;
+        z-index: -1;
+    }
+    // .join__right
+    &__right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-image: url("img/join-bg-right.jpg");
+        background-size: cover;
+        background-position: left;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 50%;
+        z-index: -2;
+    }
+}
+.button {
+    // .button--join
+    &--join {
+        background: #fff;
+        color: $colorGreen;
+        padding: toRem(10) toRem(24);
+        @media (any-hover: hover) {
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+//====================================================================================================
