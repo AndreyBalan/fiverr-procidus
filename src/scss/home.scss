@@ -1,3 +1,45 @@
 //====================================================================================================
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url("@img/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // .hero__container
+    &__container {
+        // width: 100%;
+        position: relative;
+    }
+    // .hero__content
+    &__content {
+        max-width: toRem(562);
+    }
+    // .hero__title
+    &__title {
+        font-size: toRem(42);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: toRem(4);
+            height: toRem(64);
+            left: toRem(-28);
+            background: $colorGreen;
+        }
+    }
+    // .hero__desc
+    &__text {
+        font-size: toRem(18);
+        line-height: 160%;
+        &:not(:last-child) {
+            margin-bottom: toRem(18);
+        }
+    }
+    &__arrow {
+    }
+}
 
 //====================================================================================================
