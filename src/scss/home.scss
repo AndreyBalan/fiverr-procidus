@@ -1,6 +1,6 @@
 //====================================================================================================
 
-// Hero section
+// Hero
 .hero {
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@
 
 //====================================================================================================
 
-// Solutions section
+// Solutions
 
 .solutions {
     padding: toRem(80) toRem(0);
@@ -185,6 +185,79 @@
 ._tab-active {
     color: #fff;
     background: $colorGreen;
+}
+
+//====================================================================================================
+// Features
+
+.features {
+    padding: toRem(80) toRem(0);
+    min-height: toRem(756);
+    background-image: url("@img/features-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // .features__container
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    // .features__item
+    &__item {
+        max-width: toRem(364);
+        max-height: toRem(401);
+        padding: toRem(40) toRem(40) toRem(80) toRem(40);
+        background-color: #fff;
+        &-white {
+            background-color: $colorGreen;
+            margin-top: toRem(195);
+        }
+    }
+    // .features__item-num
+    &__item-num {
+        display: block;
+        color: $colorGreen;
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: toRem(32);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: toRem(30);
+            height: toRem(30);
+            background-color: $colorGrey;
+            right: toRem(-40);
+        }
+    }
+    &__item-num.text-white {
+        color: #fff;
+        &::before {
+            background-color: #84d782;
+        }
+    }
+    // .features__item-title
+    &__item-title {
+        color: #000;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 150%; /* 27px */
+        letter-spacing: 0.54px;
+        text-transform: uppercase;
+        margin-bottom: toRem(16);
+    }
+    &__item-title.text-white {
+        color: #fff;
+    }
+    // .features__item-text
+    &__item-text {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 24px */
+    }
 }
 
 //====================================================================================================
