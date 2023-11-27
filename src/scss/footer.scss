@@ -27,6 +27,13 @@
         &:not(:last-child) {
             margin-bottom: toRem(8);
         }
+        &:last-child {
+            align-items: flex-start;
+            svg {
+                flex-shrink: 0;
+                align-items: flex-start;
+            }
+        }
     }
     // .footer__nav
     &__nav {

@@ -8,6 +8,12 @@
     &:not(:last-child) {
         margin-bottom: toRem(16);
     }
+    &--page {
+        color: $colorDark;
+        font-size: 42px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 }
 
 .text {
@@ -19,4 +25,15 @@
 
 .text-white {
     color: #fff;
+}
+
+.heading {
+    @include adaptiveValue("padding-top", 100, 50);
+    @include adaptiveValue("padding-bottom", 100, 50);
+    min-height: toRem(250);
+    background-image: url("@img/page-heading-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: toRem(80);
 }

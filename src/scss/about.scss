@@ -1,0 +1,52 @@
+.about-page {
+    margin-bottom: toRem(80);
+    padding-top: toRem(89);
+    // .about-page__heading
+    &__heading {
+    }
+    // .about-page__container
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+    // .about-page__descr
+    &__descr {
+        max-width: toRem(650);
+        font-size: 18px;
+        line-height: 160%; /* 28.8px */
+        p {
+            &:not(:last-child) {
+                margin-bottom: toRem(32);
+            }
+        }
+    }
+    // .about-page__contact
+    &__contact {
+        max-width: toRem(364);
+    }
+    // .about-page__contact-list
+    &__contact-list {
+    }
+    // .about-page__contact-item
+    &__contact-item {
+        color: $colorDark;
+        font-size: toRem(18);
+        font-weight: 700;
+        line-height: 150%; /* 27px */
+        display: flex;
+        align-items: center;
+        column-gap: toRem(16);
+        &:not(:last-child) {
+            margin-bottom: toRem(24);
+        }
+        &:last-child {
+            padding-bottom: toRem(32);
+            border-bottom: toRem(1) solid #dedede;
+            align-items: flex-start;
+            svg {
+                flex-shrink: 0;
+                align-items: flex-start;
+            }
+        }
+    }
+}

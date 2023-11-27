@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    @@include('html/_head.htm',{ "title":"Procidus | Template" })
+    @@include('html/_head.htm',{ "title":"Procidus | Main Page" })
     <body>
         <div class="wrapper">
             @@include('html/_header.htm',{})
@@ -19,7 +19,7 @@
                             >
                         </div>
                         <div class="hero__arrow">
-                            <a href="#solutions">
+                            <a href="#" data-goto=".solutions">
                                 <svg
                                     width="50"
                                     height="50"
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="solutions" id="solutions">
+                <section class="solutions">
                     <div class="solutions__container">
                         <div class="solutions__img">
                             <img src="@img/solutions-img.png" alt="Solutions" />
