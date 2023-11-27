@@ -18,11 +18,13 @@
     &--fw {
         width: 100%;
     }
-    &--header {
+    &--small {
         font-size: toRem(14);
     }
     &--support {
         margin-top: toRem(8);
+    }
+    &--large {
         padding: toRem(12) toRem(24);
     }
 }

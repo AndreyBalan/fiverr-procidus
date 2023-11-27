@@ -191,7 +191,7 @@
 // Features
 
 .features {
-    padding: toRem(80) toRem(0);
+    padding: toRem(86) toRem(0);
     min-height: toRem(756);
     background-image: url("@img/features-bg.jpg");
     background-size: cover;
@@ -221,7 +221,7 @@
         font-size: 32px;
         font-weight: 700;
         text-transform: uppercase;
-        margin-bottom: toRem(32);
+        margin-bottom: toRem(34);
         position: relative;
         &::before {
             content: "";
@@ -264,7 +264,7 @@
 // Support
 
 .support {
-    padding: toRem(80) toRem(0);
+    padding: toRem(76) toRem(0);
     // .support__container
     &__container {
         display: flex;
@@ -281,12 +281,12 @@
         display: inline-block;
         color: #fff;
         font-size: toRem(14);
-        padding: toRem(4) toRem(12);
+        padding: toRem(0) toRem(12);
         background-color: $colorGreen;
         line-height: 150%; /* 21px */
         letter-spacing: 0.42px;
         text-transform: uppercase;
-        margin-bottom: toRem(16);
+        margin-bottom: toRem(18);
     }
     // .support__descr
     &__descr {
@@ -311,8 +311,8 @@
 // About
 
 .about {
-    min-height: toRem(752);
-    padding: toRem(74) toRem(0);
+    min-height: toRem(754);
+    padding: toRem(70) toRem(0) toRem(63) toRem(10);
     background-image: url("@img/about-bg.jpg");
     background-size: cover;
     background-position: center;
@@ -358,7 +358,7 @@
 // Join
 
 .join {
-    padding: toRem(127) toRem(0);
+    padding: toRem(130) toRem(0);
     position: relative;
     &::before {
         content: "";
