@@ -1,4 +1,6 @@
 //====================================================================================================
+
+// Hero section
 .hero {
     display: flex;
     flex-direction: column;
@@ -10,7 +12,6 @@
     background-repeat: no-repeat;
     // .hero__container
     &__container {
-        // width: 100%;
         position: relative;
     }
     // .hero__content
@@ -39,7 +40,26 @@
         }
     }
     &__arrow {
+        position: absolute;
+        left: toRem(-280);
+        bottom: toRem(-300);
+        animation: bounce 0.5s infinite alternate ease;
+    }
+
+    @keyframes bounce {
+        from {
+            bottom: toRem(-280); /* Начальная позиция */
+        }
+        to {
+            bottom: toRem(
+                -270
+            ); /* Конечная позиция (можно изменять для желаемой высоты подпрыгивания) */
+        }
     }
 }
+
+//====================================================================================================
+
+// Solutions section
 
 //====================================================================================================
