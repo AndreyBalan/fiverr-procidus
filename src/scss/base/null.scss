@@ -8,11 +8,11 @@
 *::after {
     box-sizing: border-box;
 }
-*::before,
-*::after {
-    content: "";
-    display: inline-block;
-}
+// *::before,
+// *::after {
+//     content: "";
+//     display: inline-block;
+// }
 :focus,
 :active {
     // outline: none;

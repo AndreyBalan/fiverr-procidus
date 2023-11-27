@@ -1,4 +1,59 @@
 //====================================================================================================
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    min-height: toRem(89);
+
+    &__container {
+        display: flex;
+        min-height: toRem(89);
+        justify-content: space-between;
+        flex-basis: auto;
+        align-items: center;
+    }
+    // .header__nav
+    &__nav {
+        display: flex;
+        column-gap: toRem(126);
+    }
+    // .header__logo
+    &__logo {
+    }
+    // .header__menu
+    &__menu {
+        display: flex;
+        align-items: center;
+    }
+    // .header__list
+    &__list {
+        display: flex;
+        column-gap: toRem(56);
+    }
+    // .header__link
+    &__link {
+        color: $colorDark;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: color 0.3s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $colorGreen;
+            }
+        }
+    }
+    // .header__btn
+    &__btn {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+.button {
+    // .button--header
+    &--header {
+    }
+}
 
 //====================================================================================================
 
