@@ -9,6 +9,10 @@
         flex-wrap: wrap;
         // justify-content: space-between;
         column-gap: toRem(261);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: toRem(40);
+        }
     }
     // .footer__contact
     &__contact {
@@ -45,6 +49,12 @@
         column-gap: toRem(160);
         color: $colorDark;
         @include adaptiveValue("max-width", 490, 130, 0, $containerWidth, 767.98);
+        @media (max-width: $mobile) {
+            max-width: 100%;
+        }
+        @media (max-width: $mobile) {
+            column-gap: toRem(43);
+        }
     }
     // .footer__nav-item
     &__nav-item {
@@ -78,6 +88,15 @@
         margin-top: toRem(100);
         @media (max-width: 1025px) {
             margin-top: toRem(56);
+        }
+        @media (max-width: $mobile) {
+            display: none;
+        }
+        &-md3 {
+            display: none;
+            @media (max-width: $mobile) {
+                display: flex;
+            }
         }
     }
     a {
