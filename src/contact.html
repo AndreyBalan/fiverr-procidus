@@ -181,28 +181,29 @@
                                 <input
                                     class="contact__form-input"
                                     type="text"
-                                    name="form[email]"
-                                    data-error="Error"
+                                    name="name"
+                                    data-error="Invalid Name"
+                                    data-required
                                     placeholder="Name" />
                                 <input
                                     class="contact__form-input"
                                     type="text"
-                                    name="form[email]"
-                                    data-error="Error"
+                                    name="surname"
                                     placeholder="Surname" />
                             </div>
                             <div class="contact__form-row">
                                 <input
                                     class="contact__form-input"
-                                    type="text"
-                                    name="form[email]"
-                                    data-error="Error"
+                                    type="email"
+                                    name="email"
+                                    data-error="Invalid Email"
+                                    data-required
                                     placeholder="Email" />
                                 <input
                                     class="contact__form-input"
                                     type="text"
-                                    name="form[email]"
-                                    data-error="Error"
+                                    name="phone"
+                                    data-error="Invalid Number"
                                     placeholder="Phone number" />
                             </div>
                             <textarea
@@ -213,10 +214,12 @@
                                 <input
                                     type="checkbox"
                                     class="custom-checkbox"
-                                    id="happy"
-                                    name="happy"
+                                    id="check"
+                                    name="check"
+                                    data-required
+                                    data-error="You must agree to the terms and conditions"
                                     value="yes" />
-                                <label for="happy"></label>
+                                <label for="check"></label>
                                 <p>
                                     I have read and agree with <span>Procidus</span>
                                     <a href="privacy.html" target="_blank">Privacy Policy</a> and
