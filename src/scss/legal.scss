@@ -12,11 +12,12 @@
     }
     // .legal__title
     &__title {
+        line-height: 100%;
         &:not(:last-child) {
-            margin-bottom: toRem(32);
+            margin-bottom: toRem(40);
         }
         &:not(:first-child) {
-            margin-top: toRem(16);
+            margin-top: toRem(40);
         }
     }
     &__info {
@@ -36,17 +37,17 @@
     &__list-item {
         font-size: toRem(18);
         line-height: 160%; /* 28.8px */
-        padding-left: toRem(33);
+        padding-left: toRem(27);
         position: relative;
         &::before {
             content: "";
             position: absolute;
-            width: toRem(5);
-            height: toRem(5);
+            width: toRem(3);
+            height: toRem(3);
             background-color: $mainColor;
             border-radius: 50%;
-            left: 0;
-            top: toRem(13);
+            left: toRem(12);
+            top: toRem(11);
         }
         &:not(:last-child) {
             margin-bottom: toRem(16);
