@@ -11,7 +11,8 @@
     }
     // .about-page__descr
     &__descr {
-        max-width: toRem(650);
+        max-width: toRem(645);
+        padding-top: toRem(2);
         font-size: 18px;
         line-height: 160%; /* 28.8px */
         p {
