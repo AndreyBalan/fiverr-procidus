@@ -158,9 +158,7 @@
     &__content {
         @include adaptiveValue("max-width", 460, 370, 0, $containerWidth, 767.98);
     }
-    // .solutions__title
-    &__title {
-    }
+
     // .solutions__text
     &__text {
         line-height: 160%;
@@ -194,9 +192,6 @@
     // .tabs__content
     &__content {
         line-height: 150%; /* 24px */
-    }
-    // .tabs__body
-    &__body {
     }
 }
 ._tab-active {
