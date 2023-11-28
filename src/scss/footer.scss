@@ -41,11 +41,18 @@
     &__nav {
         max-width: toRem(490);
         display: flex;
+        flex-wrap: wrap;
         column-gap: toRem(160);
         color: $colorDark;
+        @include adaptiveValue("max-width", 490, 130, 0, $containerWidth, 767.98);
     }
     // .footer__nav-item
     &__nav-item {
+        @media (max-width: 1025px) {
+            &:not(:last-child) {
+                margin-bottom: toRem(40);
+            }
+        }
     }
     // .footer__title
     &__title {
@@ -69,6 +76,9 @@
     }
     &__copy {
         margin-top: toRem(100);
+        @media (max-width: 1025px) {
+            margin-top: toRem(56);
+        }
     }
     a {
         transition: all 0.3s;

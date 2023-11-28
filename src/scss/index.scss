@@ -17,6 +17,7 @@
     // .hero__content
     &__content {
         max-width: toRem(562);
+        @include adaptiveValue("max-width", 562, 532, 0, $containerWidth, 767.98);
     }
     // .hero__title
     &__title {
@@ -44,6 +45,9 @@
         left: toRem(-280);
         bottom: toRem(-300);
         animation: bounce 0.5s infinite alternate ease;
+        @media (max-width: $mobile) {
+            display: none;
+        }
     }
 
     @keyframes bounce {
@@ -72,42 +76,46 @@
     // .solutions__img
     &__img {
         max-width: toRem(558);
+        @include adaptiveValue("max-width", 558, 370, 0, $containerWidth, 767.98);
         // padding: toRem(170) toRem(58) toRem(0) toRem(41);
-        padding-top: toRem(170);
+        @include adaptiveValue("padding-top", 170, 125, 0, $containerWidth, 767.98);
         position: relative;
-
+        img {
+            @include adaptiveValue("max-width", 558, 328, 0, $containerWidth, 767.98);
+        }
         &::before {
             content: "";
             position: absolute;
-            background-color: $colorGreen;
+            background-image: url("@img/solutions-bg.jpg");
+            background-size: cover;
             z-index: -3;
-            width: toRem(425);
-            height: toRem(450);
+            @include adaptiveValue("width", 425, 270, 0, $containerWidth, 767.98);
+            @include adaptiveValue("height", 450, 297, 0, $containerWidth, 767.98);
             top: 0;
-            left: toRem(74);
+            @include adaptiveValue("left", 74, 40, 0, $containerWidth, 767.98);
         }
     }
     &__decor {
         position: relative;
         &::before {
             content: "";
-            width: toRem(40);
-            height: toRem(40);
+            @include adaptiveValue("width", 40, 27, 0, $containerWidth, 767.98);
+            @include adaptiveValue("height", 40, 27, 0, $containerWidth, 767.98);
             background: $colorGrey;
             position: absolute;
             // z-index: 2;
-            left: toRem(517);
-            bottom: toRem(128);
+            @include adaptiveValue("left", 517, 320, 0, $containerWidth, 767.98);
+            @include adaptiveValue("bottom", 128, 90, 0, $containerWidth, 767.98);
         }
         &::after {
             content: "";
-            width: toRem(20);
-            height: toRem(20);
+            @include adaptiveValue("width", 20, 14, 0, $containerWidth, 767.98);
+            @include adaptiveValue("height", 20, 14, 0, $containerWidth, 767.98);
             background: #fff;
             position: absolute;
-            // z-index: 2;
-            left: toRem(462);
-            bottom: toRem(92);
+
+            @include adaptiveValue("left", 462, 285, 0, $containerWidth, 767.98);
+            @include adaptiveValue("bottom", 92, 60, 0, $containerWidth, 767.98);
         }
     }
     &__bg {
@@ -118,28 +126,26 @@
         width: toRem(425);
         &::before {
             content: "";
-            width: toRem(40);
-            height: toRem(40);
+            @include adaptiveValue("width", 40, 27, 0, $containerWidth, 767.98);
+            @include adaptiveValue("height", 40, 27, 0, $containerWidth, 767.98);
             background: $colorGrey;
             position: absolute;
-            // z-index: 2;
-            left: toRem(-130);
-            top: toRem(-7);
+            @include adaptiveValue("left", -130, -140, 0, $containerWidth, 767.98);
+            @include adaptiveValue("top", -7, -30, 0, $containerWidth, 767.98);
         }
         &::after {
             content: "";
-            width: toRem(20);
-            height: toRem(20);
+            @include adaptiveValue("width", 20, 14, 0, $containerWidth, 767.98);
+            @include adaptiveValue("height", 20, 14, 0, $containerWidth, 767.98);
             background: #fff;
             position: absolute;
-            // z-index: 2;
-            left: toRem(-53);
-            top: toRem(49);
+            @include adaptiveValue("left", -53, -90, 0, $containerWidth, 767.98);
+            @include adaptiveValue("top", 49, 10, 0, $containerWidth, 767.98);
         }
     }
     // .solutions__content
     &__content {
-        max-width: toRem(460);
+        @include adaptiveValue("max-width", 460, 369, 0, $containerWidth, 767.98);
     }
     // .solutions__title
     &__title {
@@ -202,6 +208,10 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        @media (max-width: 1025px) {
+            flex-direction: column;
+            gap: toRem(16);
+        }
     }
     // .features__item
     &__item {
@@ -210,6 +220,10 @@
         padding: toRem(40) toRem(40) toRem(80) toRem(40);
         background-color: #fafafa;
         transition: all 0.3s;
+        @media (max-width: 1025px) {
+            max-width: unset;
+            width: 100%;
+        }
         cursor: pointer;
         // &-white {
         //     background-color: $colorGreen;
@@ -217,6 +231,9 @@
         // }
         &-mt {
             margin-top: toRem(195);
+            @media (max-width: 1025px) {
+                margin-top: toRem(0);
+            }
         }
     }
     // .features__item-num
@@ -316,6 +333,10 @@
     &__heading {
         max-width: toRem(558);
         padding-top: toRem(33);
+        @media (max-width: 1025px) {
+            padding-top: toRem(0);
+            max-width: 100%;
+        }
     }
     // .support__subtitle
     &__subtitle {
@@ -335,11 +356,19 @@
         max-width: toRem(550);
         font-weight: 500;
         line-height: 160%; /* 28.8px */
+        @media (max-width: 1025px) {
+            max-width: 100%;
+            margin-bottom: toRem(32);
+        }
     }
     // .support__content
     &__content {
         max-width: toRem(461);
         line-height: 150%;
+        @media (max-width: 1025px) {
+            padding-top: toRem(0);
+            max-width: 100%;
+        }
         p {
             &:not(:last-child) {
                 margin-bottom: toRem(16);
@@ -352,7 +381,7 @@
 // About
 
 .about {
-    min-height: toRem(754);
+    @include adaptiveValue("min-height", 754, 629, 0, $containerWidth, 767.98);
     padding: toRem(70) toRem(0) toRem(63) toRem(10);
     background-image: url("@img/about-bg.jpg");
     background-size: cover;
@@ -361,6 +390,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
     // .about__container
     &__container {
         display: flex;
@@ -399,7 +429,8 @@
 // Join
 
 .join {
-    padding: toRem(130) toRem(0);
+    @include adaptiveValue("padding-top", 130, 80, 0, $containerWidth, 767.98);
+    @include adaptiveValue("padding-bottom", 130, 80, 0, $containerWidth, 767.98);
     position: relative;
     &::before {
         content: "";
@@ -409,6 +440,17 @@
         top: 0;
         z-index: -10;
         background-color: $colorGreen;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: -10;
+        background-image: url("@img/logo-bg.svg");
+        background-position: center;
+        background-repeat: no-repeat;
     }
     // .join__container
     &__container {
@@ -445,6 +487,9 @@
         height: 100%;
         width: 60%;
         z-index: -1;
+        @media (max-width: 1025px) {
+            display: none;
+        }
     }
     // .join__right
     &__right {
@@ -458,6 +503,9 @@
         height: 100%;
         width: 50%;
         z-index: -2;
+        @media (max-width: 1025px) {
+            display: none;
+        }
     }
 }
 .button {

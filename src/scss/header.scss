@@ -16,7 +16,7 @@
     // .header__nav
     &__nav {
         display: flex;
-        column-gap: toRem(126);
+        @include adaptiveValue("column-gap", 126, 72, 0, $containerWidth, 767.98);
     }
     // .header__logo
     &__logo {
@@ -29,7 +29,7 @@
     // .header__list
     &__list {
         display: flex;
-        column-gap: toRem(56);
+        @include adaptiveValue("column-gap", 56, 40, 0, $containerWidth, 767.98);
     }
     // .header__link
     &__link {
