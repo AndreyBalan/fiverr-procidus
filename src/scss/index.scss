@@ -18,10 +18,6 @@
     &__content {
         max-width: toRem(562);
         @include adaptiveValue("max-width", 562, 532, 0, $containerWidth, 767.98);
-        @media (max-width: $mobile) {
-            padding-left: toRem(20);
-            @include adaptiveValue("padding-top", 0, 80, 0, 767.98, 325);
-        }
     }
     // .hero__title
     &__title {
@@ -159,7 +155,7 @@
     }
     // .solutions__content
     &__content {
-        @include adaptiveValue("max-width", 460, 369, 0, $containerWidth, 767.98);
+        @include adaptiveValue("max-width", 460, 370, 0, $containerWidth, 767.98);
     }
     // .solutions__title
     &__title {

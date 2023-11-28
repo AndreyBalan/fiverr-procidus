@@ -6,6 +6,7 @@
     z-index: 50;
     min-height: toRem(89);
     @media (max-width: $mobile) {
+        position: relative;
         background: #fff;
     }
     &__container {
