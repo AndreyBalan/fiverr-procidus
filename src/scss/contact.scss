@@ -150,16 +150,16 @@
                 column-gap: toRem(8);
                 color: $mainColor;
                 font-size: toRem(16);
-                font-weight: 500;
                 line-height: 150%;
                 align-items: flex-start;
                 margin-bottom: toRem(16);
                 p {
+                    max-width: toRem(332);
                     @media (max-width: 1025px) {
                         max-width: toRem(269);
                     }
                     @media (max-width: $mobile) {
-                        max-width: toRem(243);
+                        @include adaptiveValue("max-width", 500, 180);
                     }
                 }
                 input {
