@@ -4,13 +4,16 @@
     position: relative;
     background-image: url("@img/contact-bg-right.jpg");
     background-color: $colorGreen;
-    // background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
+    @media (max-width: 1025px) {
+        background-image: none;
+    }
     &__container {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        column-gap: toRem(16);
         position: relative;
         z-index: 2;
     }
@@ -23,8 +26,8 @@
     // .contact__content
     &__content {
         padding-top: toRem(97);
-        max-width: toRem(460);
         z-index: 2;
+        @include adaptiveValue("max-width", 450, 369, 0, $containerWidth, 767.98);
     }
     // .contact__title
     &__title {
@@ -83,6 +86,17 @@
         max-width: toRem(461);
         background: #fafafa;
         padding: toRem(56) toRem(40);
+        @include adaptiveValue("padding-top", 56, 40, 0, $containerWidth, 767.98);
+        @include adaptiveValue("padding-right", 40, 30, 0, $containerWidth, 767.98);
+        @include adaptiveValue("padding-bottom", 56, 40, 0, $containerWidth, 767.98);
+        @include adaptiveValue("padding-left", 40, 30, 0, $containerWidth, 767.98);
+        @media (max-width: 1025px) {
+            @include adaptiveValue("max-width", 360, 340, 0, $containerWidth, 767.98);
+
+            max-width: toRem(340);
+        }
+
+        z-index: 2;
         &-input {
             padding: toRem(12) toRem(16);
             max-width: toRem(182);
@@ -96,6 +110,13 @@
                 min-height: toRem(188);
                 resize: none;
                 margin-bottom: toRem(16);
+                @media (max-width: 1025px) {
+                    width: 100%;
+                }
+            }
+            @media (max-width: 1025px) {
+                max-width: toRem(305);
+                width: 100%;
             }
         }
         &-button {
@@ -105,6 +126,7 @@
         }
         &-row {
             display: flex;
+            flex-wrap: wrap;
             // justify-content: space-between;
             gap: toRem(16);
             width: 100%;

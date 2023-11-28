@@ -8,7 +8,8 @@
         display: flex;
         flex-wrap: wrap;
         // justify-content: space-between;
-        column-gap: toRem(261);
+
+        @include adaptiveValue("column-gap", 261, 190, 0, $containerWidth, 767.98);
         @media (max-width: $mobile) {
             flex-direction: column;
             gap: toRem(40);
