@@ -22,12 +22,21 @@
         z-index: 1;
         top: toRem(20);
         left: toRem(-80);
+        @media (max-width: $mobile) {
+            display: none;
+        }
     }
     // .contact__content
     &__content {
         padding-top: toRem(97);
         z-index: 2;
-        @include adaptiveValue("max-width", 450, 369, 0, $containerWidth, 767.98);
+        @include adaptiveValue("max-width", 450, 350, 0, $containerWidth, 767.98);
+        @media (max-width: $mobile) {
+            max-width: 100%;
+        }
+        @media (max-width: $mobile) {
+            padding-top: toRem(0);
+        }
     }
     // .contact__title
     &__title {
@@ -78,6 +87,9 @@
                 }
             }
         }
+        @media (max-width: $mobile) {
+            margin-bottom: toRem(40);
+        }
     }
     &__form {
         display: flex;
@@ -91,9 +103,10 @@
         @include adaptiveValue("padding-bottom", 56, 40, 0, $containerWidth, 767.98);
         @include adaptiveValue("padding-left", 40, 30, 0, $containerWidth, 767.98);
         @media (max-width: 1025px) {
-            @include adaptiveValue("max-width", 360, 340, 0, $containerWidth, 767.98);
-
-            max-width: toRem(340);
+            @include adaptiveValue("max-width", 461, 369, 0, $containerWidth, 767.98);
+        }
+        @media (max-width: $mobile) {
+            min-width: 100%;
         }
 
         z-index: 2;
@@ -118,6 +131,9 @@
                 max-width: toRem(305);
                 width: 100%;
             }
+            @media (max-width: $mobile) {
+                max-width: 100%;
+            }
         }
         &-button {
             width: 100%;
@@ -138,6 +154,14 @@
                 line-height: 150%;
                 align-items: flex-start;
                 margin-bottom: toRem(16);
+                p {
+                    @media (max-width: 1025px) {
+                        max-width: toRem(269);
+                    }
+                    @media (max-width: $mobile) {
+                        max-width: toRem(243);
+                    }
+                }
                 input {
                     width: toRem(50);
                 }
