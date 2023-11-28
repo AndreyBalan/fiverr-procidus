@@ -32,6 +32,7 @@
             background: $colorGreen;
             @media (max-width: $mobile) {
                 left: toRem(-10);
+                top: toRem(-5);
             }
         }
         @media (max-width: $mobile) {

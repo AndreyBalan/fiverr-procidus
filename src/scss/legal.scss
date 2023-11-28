@@ -1,15 +1,12 @@
-.privacy {
-}
 .legal {
-    // .legal__container
-    padding-top: toRem(89);
-    &__container {
-    }
     // .legal__content
     &__content {
         padding-top: toRem(80);
         padding-bottom: toRem(80);
         max-width: toRem(946);
+        @media (max-width: 1025px) {
+            max-width: 100%;
+        }
     }
     // .legal__title
     &__title {
