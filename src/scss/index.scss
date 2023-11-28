@@ -483,6 +483,9 @@
         font-weight: 800;
         line-height: 140%; /* 44.8px */
         text-transform: uppercase;
+        @media (max-width: $mobile) {
+            font-size: toRem(28);
+        }
     }
     // .join__descr
     &__descr {

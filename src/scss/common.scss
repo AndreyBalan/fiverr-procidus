@@ -10,7 +10,7 @@
     }
     &--page {
         color: $colorDark;
-        font-size: 42px;
+        @include adaptiveValue("font-size", 42, 32);
         font-weight: 700;
         text-transform: uppercase;
     }
@@ -30,7 +30,7 @@
 .heading {
     @include adaptiveValue("padding-top", 100, 50);
     @include adaptiveValue("padding-bottom", 100, 50);
-    min-height: toRem(250);
+    @include adaptiveValue("min-height", 250, 164);
     background-image: url("@img/page-heading-bg.jpg");
     background-size: cover;
     background-position: center;

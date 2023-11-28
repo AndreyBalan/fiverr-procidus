@@ -1,9 +1,6 @@
 //====================================================================================================
 .header {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    z-index: 50;
+    position: relative;
     min-height: toRem(89);
     @media (max-width: $mobile) {
         position: relative;
@@ -58,6 +55,12 @@
     &__btn {
         display: flex;
         justify-content: flex-end;
+    }
+    &__main {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        z-index: 50;
     }
 }
 .button {
