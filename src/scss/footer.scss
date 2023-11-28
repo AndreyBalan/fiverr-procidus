@@ -1,6 +1,7 @@
 //====================================================================================================
 .footer {
     padding: toRem(56) toRem(0);
+    background-color: $colorGrey;
     // .footer__container
     &__container {
         display: flex;
