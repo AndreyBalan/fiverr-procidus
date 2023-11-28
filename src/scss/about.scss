@@ -1,8 +1,12 @@
 .about-page {
-    margin-bottom: toRem(80);
     padding-top: toRem(89);
     // .about-page__heading
     &__heading {
+    }
+    &__content {
+        background-color: #fafafa;
+        padding-top: toRem(80);
+        padding-bottom: toRem(80);
     }
     // .about-page__container
     &__container {

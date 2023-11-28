@@ -208,9 +208,14 @@
         max-width: toRem(364);
         max-height: toRem(401);
         padding: toRem(40) toRem(40) toRem(80) toRem(40);
-        background-color: #fff;
-        &-white {
-            background-color: $colorGreen;
+        background-color: #fafafa;
+        transition: all 0.3s;
+        cursor: pointer;
+        // &-white {
+        //     background-color: $colorGreen;
+        //     margin-top: toRem(195);
+        // }
+        &-mt {
             margin-top: toRem(195);
         }
     }
@@ -232,12 +237,12 @@
             right: toRem(-40);
         }
     }
-    &__item-num.text-white {
-        color: #fff;
-        &::before {
-            background-color: #84d782;
-        }
-    }
+    // &__item-num.text-white {
+    //     color: #fff;
+    //     &::before {
+    //         background-color: #84d782;
+    //     }
+    // }
     // .features__item-title
     &__item-title {
         color: #000;
@@ -248,9 +253,9 @@
         text-transform: uppercase;
         margin-bottom: toRem(16);
     }
-    &__item-title.text-white {
-        color: #fff;
-    }
+    // &__item-title.text-white {
+    //     color: #fff;
+    // }
     // .features__item-text
     &__item-text {
         font-size: 16px;
@@ -258,6 +263,41 @@
         font-weight: 500;
         line-height: 150%; /* 24px */
     }
+    .features__item:hover {
+        background: $colorGreen;
+    }
+    .features__item:hover .features__item-num {
+        color: #fff;
+    }
+    .features__item:hover .features__item-num::before {
+        background-color: #84d782;
+    }
+
+    .features__item:hover .features__item-title {
+        color: #fff;
+    }
+
+    .features__item:hover .features__item-text {
+        color: #fff;
+    }
+
+    // .features__item-white:hover {
+    //     background: #fff;
+    // }
+    // .features__item-white:hover .features__item-num {
+    //     color: $colorGreen;
+    // }
+    // .features__item-white:hover .features__item-num::before {
+    //     background-color: $colorGrey;
+    // }
+
+    // .features__item-white:hover .features__item-title {
+    //     color: #000;
+    // }
+
+    // .features__item-white:hover .features__item-text {
+    //     color: $mainColor;
+    // }
 }
 
 //====================================================================================================
@@ -265,6 +305,7 @@
 
 .support {
     padding: toRem(76) toRem(0);
+    background-color: #fafafa;
     // .support__container
     &__container {
         display: flex;
