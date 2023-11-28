@@ -1,16 +1,30 @@
 .contact {
     min-height: toRem(748);
     padding: toRem(80) toRem(0);
-    background: $colorGreen;
+    position: relative;
+    background-image: url("@img/contact-bg-right.jpg");
+    background-color: $colorGreen;
+    // background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
     &__container {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+    }
+    &__bg {
+        position: absolute;
+        z-index: 1;
+        top: toRem(20);
+        left: toRem(-80);
     }
     // .contact__content
     &__content {
         padding-top: toRem(97);
         max-width: toRem(460);
+        z-index: 2;
     }
     // .contact__title
     &__title {
@@ -51,6 +65,14 @@
             svg {
                 flex-shrink: 0;
                 align-items: flex-start;
+            }
+        }
+        a {
+            transition: all 0.3s;
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -150,24 +172,23 @@
     background-size: cover;
     background-size: 80% 80%;
 }
-/* стили при наведении курсора на checkbox */
+
 .custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
-    border-color: #b3d7ff;
+    border-color: #8bff80;
 }
-/* стили для активного состояния чекбокса (при нажатии на него) */
+
 .custom-checkbox:not(:disabled):active + label::before {
-    background-color: #b3d7ff;
-    border-color: #b3d7ff;
+    background-color: #8bff80;
+    border-color: #8bff80;
 }
-/* стили для чекбокса, находящегося в фокусе */
+
 .custom-checkbox:focus + label::before {
     box-shadow: 0 0 0 0.2rem rgba(51, 255, 0, 0.25);
 }
-/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+
 .custom-checkbox:focus:not(:checked) + label::before {
-    border-color: #80bdff;
+    border-color: #8bff80;
 }
-/* стили для чекбокса, находящегося в состоянии disabled */
 .custom-checkbox:disabled + label::before {
     background-color: #e9ecef;
 }
