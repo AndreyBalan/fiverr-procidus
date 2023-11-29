@@ -3,6 +3,7 @@
     padding: toRem(56) toRem(0);
     background-color: $colorGrey;
     z-index: 5;
+    position: relative;
     // .footer__container
     &__container {
         display: flex;
@@ -50,6 +51,7 @@
         column-gap: toRem(160);
         color: $colorDark;
         @include adaptiveValue("max-width", 490, 130, 0, $containerWidth, 767.98);
+
         @media (max-width: $mobile) {
             max-width: 100%;
         }
@@ -87,11 +89,23 @@
     }
     &__copy {
         margin-top: toRem(100);
+        width: 100%;
+        text-align: right;
         @media (max-width: 1025px) {
-            margin-top: toRem(56);
+            display: none;
         }
         @media (max-width: $mobile) {
             display: none;
+        }
+        &-md2 {
+            display: none;
+            @media (max-width: 1025px) {
+                display: flex;
+                margin-top: toRem(60);
+            }
+            @media (max-width: $mobile) {
+                display: none;
+            }
         }
         &-md3 {
             display: none;
