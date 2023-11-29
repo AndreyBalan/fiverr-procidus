@@ -173,39 +173,37 @@
                                     fill="#67CC65" />
                             </svg>
                         </div>
-                        <form
-                            action="files/sendmail/sendmail.php"
-                            method="POST"
-                            class="contact__form">
+                        <form id="form" method="POST" class="contact__form">
                             <div class="contact__form-row">
                                 <input
-                                    class="contact__form-input"
+                                    class="input contact__form-input"
                                     type="text"
-                                    name="name"
+                                    name="Name"
                                     required
                                     placeholder="Name" />
                                 <input
                                     class="contact__form-input"
                                     type="text"
-                                    name="surname"
+                                    name="Surname"
                                     placeholder="Surname" />
                             </div>
                             <div class="contact__form-row">
                                 <input
                                     class="contact__form-input"
                                     type="email"
-                                    name="email"
+                                    name="Email"
                                     required
                                     placeholder="Email" />
                                 <input
                                     class="contact__form-input"
                                     type="text"
-                                    name="phone"
+                                    name="Phone Number"
                                     required
                                     placeholder="Phone number" />
                             </div>
                             <textarea
                                 class="contact__form-input contact__form-input_textarea"
+                                name="Notes"
                                 placeholder="Let us know how we can help"></textarea>
 
                             <div class="contact__form-row contact__form-row-checkbox">
@@ -219,14 +217,30 @@
                                 <label for="check"></label>
                                 <p>
                                     I have read and agree with <span>Procidus</span>
-                                    <a href="privacy.html" target="_blank">Privacy Policy</a> and
-                                    <a href="terms.html" target="_blank">Terms of Use</a>
+                                    <a href="privacy.html">Privacy Policy</a> and
+                                    <a href="terms.html">Terms of Use</a>
                                 </p>
                             </div>
 
-                            <button type="submit" class="contact__form-button button">
+                            <button
+                                type="submit"
+                                class="button is-primary contact__form-button button"
+                                id="submit-button">
                                 SEND YOUR REQUEST
                             </button>
+                            <div
+                                id="message"
+                                style="
+                                    display: none;
+                                    margin: 20px;
+                                    width: 100%;
+                                    font-weight: bold;
+                                    color: #5bc858;
+                                    padding: 8px;
+                                    background-color: #fafafa;
+                                    border-radius: 4px;
+                                    border-color: #5bc858;
+                                "></div>
                         </form>
                     </div>
                 </section>
@@ -351,5 +365,65 @@
             </footer>
         </div>
         @@include('html/_js.htm',{})
+        <script>
+            document.getElementById("form").addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent the default form submission
+                document.getElementById("message").textContent = "Submitting..";
+                document.getElementById("message").style.display = "block";
+                document.getElementById("submit-button").disabled = true;
+
+                // Collect the form data
+                var formData = new FormData(this);
+                var keyValuePairs = [];
+                for (var pair of formData.entries()) {
+                    keyValuePairs.push(pair[0] + "=" + pair[1]);
+                }
+
+                var formDataString = keyValuePairs.join("&");
+
+                // Send a POST request to your Google Apps Script
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbx8t_XrYsQE0OhFX2V5uAGHesRp6L6WdjxzIO17HKxX1ObSZFBmt9R_02bVouTTF3o/exec",
+                    {
+                        redirect: "follow",
+                        method: "POST",
+                        body: formDataString,
+                        headers: {
+                            "Content-Type": "text/plain;charset=utf-8",
+                        },
+                    }
+                )
+                    .then(function (response) {
+                        // Check if the request was successful
+                        if (response) {
+                            return response; // Assuming your script returns JSON response
+                        } else {
+                            throw new Error("Failed to submit the form.");
+                        }
+                    })
+                    .then(function (data) {
+                        // Display a success message
+                        document.getElementById("message").textContent =
+                            "Data submitted successfully!";
+                        document.getElementById("message").style.display = "block";
+                        document.getElementById("message").style.backgroundColor = "green";
+                        document.getElementById("message").style.color = "beige";
+                        document.getElementById("submit-button").disabled = false;
+                        document.getElementById("form").reset();
+
+                        setTimeout(function () {
+                            document.getElementById("message").textContent = "";
+                            document.getElementById("message").style.display = "none";
+                        }, 2600);
+                    })
+                    .catch(function (error) {
+                        // Handle errors, you can display an error message here
+                        console.error(error);
+                        document.getElementById("message").textContent =
+                            "An error occurred while submitting the form.";
+                        document.getElementById("message").style.display = "block";
+                    });
+            });
+        </script>
     </body>
 </html>
